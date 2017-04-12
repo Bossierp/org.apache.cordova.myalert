@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
+           id="org.apache.cordova.myalert"
+      version="0.2.6">
+
+    <name>Android myalert</name>
+    <description>Cordova Android myalert Plugin</description>
+    <license>Apache 2.0</license>
+    <keywords>cordova,android,myalert</keywords>
+    <repo>https://github.com/ZhichengChen/cordova-plugin-android-myalert.git</repo>
+    <issue>https://github.com/ZhichengChen/cordova-plugin-android-myalert/issues</issue>
+
+    <js-module src="www/myalert.js" name="myalert">
+        <merges target="navigator.myalert" />
+    </js-module>
+
+    <!-- android -->
+    <platform name="android">
+        <config-file target="res/xml/config.xml" parent="/*">
+            <feature name="myalert">
+                <param name="android-package" value="org.apache.cordova.myalert.myalert"/>
+            </feature>
+        </config-file>
+
+        <source-file src="src/android/myalert.java" target-dir="src/org/apache/cordova/myalert" />
+
+    </platform>
+
+</plugin>
